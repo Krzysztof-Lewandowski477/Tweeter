@@ -23,4 +23,5 @@ public class User {
     @Column (nullable = false)
     @Email
     private String email;
+    private Boolean active = Boolean.TRUE;
 }
