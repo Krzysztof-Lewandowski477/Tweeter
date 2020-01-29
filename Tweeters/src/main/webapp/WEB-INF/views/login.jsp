@@ -13,7 +13,7 @@
 </head>
 <body class="has-navbar-fixed-top is-black">
 <header>
-    <jsp:include page="/WEB-INF/views/fragments/main-menu.jsp"/>
+    <jsp:include page="/WEB-INF/views/fragments/topbar.jsp"/>
 </header>
 <section class="hero is-fullheight">
     <div class="container">
@@ -62,8 +62,8 @@
         </div>
     </div>
 </section>
-<footer class="footer">
-    <jsp:include page="/WEB-INF/views/fragments/footer.jsp"/>
-</footer>
+<%--<footer class="footer">--%>
+<%--    <jsp:include page="/WEB-INF/views/fragments/footer.jsp"/>--%>
+<%--</footer>--%>
 </body>
 </html>
