@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @Entity
@@ -24,4 +27,8 @@ public class User {
     @Email
     private String email;
     private Boolean active = Boolean.TRUE;
+
+
+    @ManyToMany
+    private Set<Role> roles = new HashSet<> ( );
 }

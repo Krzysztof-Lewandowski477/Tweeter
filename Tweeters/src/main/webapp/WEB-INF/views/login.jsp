@@ -29,9 +29,9 @@
             <div class="column">
                 <form method="post" action="/login" >
                     <div class="field is-black">
-                        <label class="label" for="username"><s:message code="global.username"/></label>
+                        <label class="label" for="email"><s:message code="global.username"/></label>
                         <div class="control has-icons-left">
-                            <input type="text" id="username" name="username" required
+                            <input type="text" id="email" name="email" required
                                    class="input"/>
                             <span class="icon is-small is-left is-black">
                                 <i class="fas fa-user"></i>
