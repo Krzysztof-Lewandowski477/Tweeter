@@ -2,6 +2,8 @@ package pl.tweeter.Tweeter.services.impl;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.tweeter.Tweeter.domain.entity.Role;
 import pl.tweeter.Tweeter.domain.entity.User;
 import pl.tweeter.Tweeter.domain.repositories.RoleRepository;
@@ -9,6 +11,8 @@ import pl.tweeter.Tweeter.domain.repositories.UserRepository;
 import pl.tweeter.Tweeter.dtos.RegistrationDataDTO;
 import pl.tweeter.Tweeter.services.RegistrationService;
 
+@Service
+@Transactional
 public class RegistrationServiceImpl implements RegistrationService {
 
     private final PasswordEncoder passwordEncoder;
