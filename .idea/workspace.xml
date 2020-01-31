@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42ff6a56-e545-466f-ba03-b75f270d8c48" name="Default Changelist" comment="account">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/account.jsp" afterDir="false" />
+    <list default="true" id="42ff6a56-e545-466f-ba03-b75f270d8c48" name="Default Changelist" comment="&#10;creating a new repository for the program. A previous repository failure resulted in the commit being removed">
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,9 +59,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -140,6 +142,11 @@
       <workItem from="1580394660005" duration="506000" />
       <workItem from="1580395471108" duration="68000" />
       <workItem from="1580395600417" duration="1638000" />
+      <workItem from="1580397564922" duration="367000" />
+      <workItem from="1580474638733" duration="4972000" />
+      <workItem from="1580479702567" duration="162000" />
+      <workItem from="1580480351341" duration="360000" />
+      <workItem from="1580487272764" duration="846000" />
     </task>
     <task id="LOCAL-00001" summary="project tweeter implementation added">
       <created>1579713861845</created>
@@ -204,7 +211,70 @@
       <option name="project" value="LOCAL" />
       <updated>1580310369507</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="&#10;creating a new repository for the program. A previous repository failure resulted in the commit being removed">
+      <created>1580397745071</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1580397745071</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add index Page">
+      <created>1580475786578</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1580475786578</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add index page">
+      <created>1580475801595</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1580475801595</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add register service">
+      <created>1580475862138</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1580475862138</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add registration form and control">
+      <created>1580477447377</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1580477447377</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add register form and i18n">
+      <created>1580479522036</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1580479522036</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add footer">
+      <created>1580479553447</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1580479553447</updated>
+    </task>
+    <task id="LOCAL-00017" summary="register form">
+      <created>1580479579083</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1580479579083</updated>
+    </task>
+    <task id="LOCAL-00018" summary="complete registration form">
+      <created>1580480642308</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1580480642309</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +326,15 @@
     <MESSAGE value="add return to index" />
     <MESSAGE value="create" />
     <MESSAGE value="account" />
-    <option name="LAST_COMMIT_MESSAGE" value="account" />
+    <MESSAGE value="&#10;creating a new repository for the program. A previous repository failure resulted in the commit being removed" />
+    <MESSAGE value="add index Page" />
+    <MESSAGE value="add index page" />
+    <MESSAGE value="add register service" />
+    <MESSAGE value="add registration form and control" />
+    <MESSAGE value="add register form and i18n" />
+    <MESSAGE value="add footer" />
+    <MESSAGE value="register form" />
+    <MESSAGE value="complete registration form" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete registration form" />
   </component>
 </project>
