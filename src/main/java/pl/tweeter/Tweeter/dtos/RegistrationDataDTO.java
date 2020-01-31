@@ -9,7 +9,10 @@ public class RegistrationDataDTO {
 
     @NotBlank
     @Size(min=3, max=12)
-    private String username;
+    private String firstName;
+    @NotBlank
+    @Size(min=3, max=12)
+    private String lastName;
     @NotBlank @Email
     private String email;
     @NotBlank @Size(min = 4, max=12)

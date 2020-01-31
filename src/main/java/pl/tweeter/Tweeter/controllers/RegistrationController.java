@@ -1,5 +1,6 @@
 package pl.tweeter.Tweeter.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,7 @@ import pl.tweeter.Tweeter.dtos.RegistrationDataDTO;
 import pl.tweeter.Tweeter.services.impl.RegistrationServiceImpl;
 
 import javax.validation.Valid;
-
+@Slf4j
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
@@ -39,8 +40,8 @@ public class RegistrationController {
             return "register-form";
         }
         registrationService.register ( register );
-
-        return "index";
+        log.debug ( "register {}",register );
+        return "login";
     }
 
 }
