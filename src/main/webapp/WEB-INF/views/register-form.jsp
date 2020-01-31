@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="field">
-                        <form:label path="lastName" cssClass="label"><s:message code="global.username"/></form:label>
+                        <form:label path="lastName" cssClass="label"><s:message code="global.lastname"/></form:label>
                         <div class="control has-icons-left">
                             <s:message code="pages.register.form.helps.username" var="lastNamePlaceholder"/>
                             <form:input path="lastName" cssClass="input" required="true" placeholder="${lastNamePlaceholder}"/>
