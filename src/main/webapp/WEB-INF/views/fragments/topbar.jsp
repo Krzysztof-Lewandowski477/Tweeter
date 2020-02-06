@@ -20,7 +20,7 @@
             <sec:authorize access="hasRole('USER')">
                 <div class="navbar-item">
 
-                    <c:url var="accountURL" value="/user"/>
+                    <c:url var="accountURL" value="/user/account"/>
                     <a class="navbar-item button is-black" href="${accountURL}">
                         <spring:message code="pages.menu.links.account"/>
                     </a>
