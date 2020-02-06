@@ -29,7 +29,7 @@
             <div class="column">
                 <form method="post" action="/login" >
                     <div class="field is-black">
-                        <label class="label" for="email"><s:message code="global.username"/></label>
+                        <label class="label" for="email"><s:message code="global.email"/></label>
                         <div class="control has-icons-left">
                             <input type="text" id="email" name="email" required
                                    class="input"/>
@@ -62,8 +62,8 @@
         </div>
     </div>
 </section>
-<%--<footer class="footer">--%>
-<%--    <jsp:include page="/WEB-INF/views/fragments/footer.jsp"/>--%>
-<%--</footer>--%>
+<footer class="footer">
+    <jsp:include page="/WEB-INF/views/fragments/footer.jsp"/>
+</footer>
 </body>
 </html>

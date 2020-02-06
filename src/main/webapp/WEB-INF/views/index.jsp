@@ -1,14 +1,19 @@
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
 <head>
-    <title>Strona główna</title>
+
+    <s:message code="pages.login.head.title" var="title"/>
+    <jsp:include page="/WEB-INF/views/fragments/head.jsp">
+        <jsp:param name="title" value="${title}"/>
+    </jsp:include>
 </head>
-<body>
+<body class="has-navbar-fixed-top is-black">
 <header>
-    <h1>Witaj na stronie</h1>
+    <jsp:include page="/WEB-INF/views/fragments/topbar.jsp"/>
 </header>
-asdasdasdasd
+<footer class="footer">
+    <jsp:include page="/WEB-INF/views/fragments/footer.jsp"/>
+</footer>
 </body>
 </html>
