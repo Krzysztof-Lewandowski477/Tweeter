@@ -3,6 +3,8 @@
 <%@ taglib prefix="forEach" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -17,15 +19,23 @@
 <header>
     <jsp:include page="/WEB-INF/views/fragments/topbar.jsp"/>
 </header>
-Wszystkie tweety
-Tweety:<br/>
+Wszystkie tweety<br/>
+Tweety:
 <c:forEach items="${tweets}" var="tweets">
 <br/>
-    ${tweets.id}<br/>
+    ${tweets.id}
     ${tweets.text}
 
 <sec:csrfInput/>
 </c:forEach>
+<form:form method="post" modelAttribute="newTweet">
+    Podaj Tweeter<form:textarea path="text" rows="2" cols="3"/><form:errors path="text"/>
+    <form:hidden path="user"/><br/>
+    <form:hidden path="created"/>
+    <from:hidden path="user.id"/>
+    <button class="button" type="submit">Submit</button>
+    <sec:csrfInput/>
+</form:form>
 <footer class="footer">
     <jsp:include page="/WEB-INF/views/fragments/footer.jsp"/>
 </footer>
