@@ -43,11 +43,11 @@ public class HomeController {
     }
 
     @PostMapping("/index")
-    public String postIndexPage(@ModelAttribute("newTweet") @Valid UserTwittDataDTO userTwittDataDTO , BindingResult result){
+    public String postIndexPage(@ModelAttribute("newTweet") @Valid UserTwittDataDTO userTwittDataDTO ,Long id, BindingResult result){
         if(result.hasErrors ()){
             return "redirect:/index";
         }
-        userTwittService.addTweet ( userTwittDataDTO );
+        userTwittService.addTweet ( userTwittDataDTO ,id);
         return "redirect:/index";
     }
 
