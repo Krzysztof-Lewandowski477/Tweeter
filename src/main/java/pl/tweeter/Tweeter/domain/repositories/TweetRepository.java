@@ -3,8 +3,10 @@ package pl.tweeter.Tweeter.domain.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.tweeter.Tweeter.domain.entity.Tweet;
 
+import java.util.List;
+
+
 public interface TweetRepository extends JpaRepository<Tweet, Long> {
-
-    Tweet findAllById(Long id);
-
+    
+    List<Tweet> findAllByUserId(Long id);
 }

@@ -6,7 +6,7 @@ import javax.validation.constraints.*;
 
 @Data
 public class RegistrationDataDTO {
-
+    private Long id;
     @NotBlank
     @Size(min=3, max=12)
     private String firstName;

@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -27,8 +28,8 @@ public class User {
     @Email
     private String email;
     private Boolean active = Boolean.TRUE;
-    @ManyToOne
-    private Tweet tweet;
+//    @OneToMany(mappedBy = "user")
+//    private List<Tweet> tweet;
     @ManyToMany
     private Set<Role> roles = new HashSet<> ( );
 }
