@@ -6,4 +6,6 @@ public interface RegistrationService {
 
     void register(RegistrationDataDTO registrationDataDTO);
 
+
+
 }
