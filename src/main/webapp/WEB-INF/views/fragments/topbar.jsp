@@ -9,7 +9,7 @@
 <nav class="navbar is-fixed-top is-black" role="navigation" aria-label="main navigation">
     <div class="navbar-brand is-black">
         <div class="navbar-item ">
-            <c:url var="homeURL" value="/"/>
+            <c:url var="homeURL" value="/index"/>
             <a class="button is-black " href="${homeURL}">
                 <spring:message code="pages.menu.links.main"/>
             </a>
