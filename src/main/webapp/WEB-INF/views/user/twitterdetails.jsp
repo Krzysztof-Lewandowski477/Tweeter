@@ -1,3 +1,5 @@
+
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
@@ -20,40 +22,26 @@
 <header>
     <jsp:include page="/WEB-INF/views/fragments/topbar.jsp"/>
 </header>
-<section class="hero is-bold is-medium">
-    <div class="container">
-        <div class="left-container">
+<div class="slogan container container--90 -align-center">
+    <div class="slogan--item">
+        <table border="1" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+            <td>Lp.</td>
+            <td width="185px"> Nazwa</td>
+            <td >Data Utworzenia</td>
+            <td align="center"> Operacje</td>
+            </tr>
 
-                <div class="left-arrow">
-
-                    <c:url var="accountURL" value="/user/account"/>
-                    <a class="navbar-item button is-black" href="${accountURL}">
-                        <spring:message code="pages.menu.links.account"/>
-                    </a>
-
-                </div>
-            Wszystkie twoje tweety
-<for:forEach items="${allTwitt}" var="allTwitt">
-    ${allTwitt.text}
-    <td><b> <a href="${detailsURL}">Szczegóły</a></b></td>
-    <c:url value="/user/twitterdetails" var="detailsURL">
-        <c:param name="id" value="${allTwitt.id}"/>
-    </c:url>
-
-<sec:csrfInput/>
-</for:forEach>
-        <div class="hero-body">
-            <h1 class="title">
-                Twitter
-            </h1>
-            <h2 class="subtitle">
-                Witaj w projekcie <strong>Twitter</strong>.
-                <br/>
-            </h2>
-
-        </div>
+                <tr>
+                    <td>${stat.count}.</td>
+                    <td>${tweet.text}</td>
+                    <td>${tweet.created}</td>
+                    <td>
+                        <button  class="default-button" onclick="window.location.href ='${deleteURL}';">Usuń</button>
+                   </td>
+                </tr>
+        </table>
     </div>
-</section>
+</div>
 <footer class="footer">
     <jsp:include page="/WEB-INF/views/fragments/footer.jsp"/>
 </footer>
