@@ -9,7 +9,7 @@ import java.util.List;
 public interface UserTwittService {
 
     List<UserTwittDataDTO> showTwitt(Long id);
-
+    void showTwitterDetails(Long id);
     void addTweet(UserTwittDataDTO userTwittDataDTO, Long id);
 
 

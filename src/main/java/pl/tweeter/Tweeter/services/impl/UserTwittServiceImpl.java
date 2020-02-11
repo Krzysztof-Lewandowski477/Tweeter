@@ -42,6 +42,11 @@ public class UserTwittServiceImpl implements UserTwittService {
     }
 
     @Override
+    public void showTwitterDetails(Long id) {
+        tweetRepository.findTweetsById ( id );
+    }
+
+    @Override
     public void addTweet(UserTwittDataDTO userTwittDataDTO, Long id) {
         //Ustawienie daty czasowej na polską
         LocalDateTime localDateTimePl = LocalDateTime.now ().plusHours ( 1 );
