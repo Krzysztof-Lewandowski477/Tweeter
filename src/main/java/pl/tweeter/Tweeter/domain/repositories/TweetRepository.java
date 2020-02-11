@@ -6,4 +6,5 @@ import pl.tweeter.Tweeter.domain.entity.Tweet;
 public interface TweetRepository extends JpaRepository<Tweet, Long> {
 
     Tweet findAllById(Long id);
+
 }
