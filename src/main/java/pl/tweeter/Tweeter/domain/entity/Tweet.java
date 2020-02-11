@@ -17,10 +17,8 @@ public class Tweet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne(optional = false)
-    @JoinColumn(name="userTweet_id")
-    private User userTweet;
+//    @ManyToOne(optional = false)
+//    private User userTweet;
     private String text;
-
     private LocalDateTime created;
 }

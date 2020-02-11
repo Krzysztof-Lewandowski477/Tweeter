@@ -27,8 +27,8 @@ public class User {
     @Email
     private String email;
     private Boolean active = Boolean.TRUE;
-
-
+    @ManyToOne
+    private Tweet tweet;
     @ManyToMany
     private Set<Role> roles = new HashSet<> ( );
 }
