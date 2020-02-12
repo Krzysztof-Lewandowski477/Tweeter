@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,4 +25,5 @@ public class Comment {
     private LocalDateTime created;
     @Column(unique = false)
     private String text;
+
 }

@@ -3,10 +3,7 @@ package pl.tweeter.Tweeter.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.tweeter.Tweeter.domain.repositories.CommentRepository;
 import pl.tweeter.Tweeter.domain.repositories.TweetRepository;
 import pl.tweeter.Tweeter.dtos.CommentDataDTO;
@@ -15,7 +12,6 @@ import pl.tweeter.Tweeter.services.impl.CommentServiceImpl;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/twittercomment")
 public class CommentController {
 
     private final TweetRepository tweetRepository;
@@ -29,8 +25,8 @@ public class CommentController {
         this.commentService = commentService;
     }
 
-    @GetMapping()
-    public String getComment(Long id , Model model){
+    @GetMapping("/twittercomment")
+    public String getComment( Long id , Model model){
 
         model.addAttribute ( "comments", commentRepository.findAllByTweetId ( id ) );
         model.addAttribute ( "tweet", tweetRepository.findTweetsById ( id ) );
@@ -39,12 +35,12 @@ public class CommentController {
         return "twittercomment";
     }
 
-    @PostMapping()
-    public String postComment (@ModelAttribute("comment") @Valid CommentDataDTO commentDataDTO, BindingResult result){
+    @PostMapping("/twittercomment")
+    public String postComment (@ModelAttribute("comment") @Valid CommentDataDTO commentDataDTO,Long id, BindingResult result){
         if(result.hasErrors ()){
             return "redirect:/twittercomment";
         }
-        commentService.addComment ( commentDataDTO );
+        commentService.addComment ( commentDataDTO, id);
 
         return "redirect:/twittercomment";
     }
