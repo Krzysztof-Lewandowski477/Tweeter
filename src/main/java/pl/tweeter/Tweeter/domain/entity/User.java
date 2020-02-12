@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -28,8 +29,9 @@ public class User {
     @Email
     private String email;
     private Boolean active = Boolean.TRUE;
-//    @OneToMany(mappedBy = "user")
-//    private List<Tweet> tweet;
+
     @ManyToMany
     private Set<Role> roles = new HashSet<> ( );
+    @OneToMany
+    private List<Comment> comment= new ArrayList<> (  );
 }

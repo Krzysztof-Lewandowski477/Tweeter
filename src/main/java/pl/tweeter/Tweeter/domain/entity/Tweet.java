@@ -7,6 +7,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Setter
@@ -20,6 +22,8 @@ public class Tweet {
     private Long id;
     @ManyToOne
     private User user;
+    @OneToMany
+    private List<Comment> comment = new ArrayList<> (  );
     private String text;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime created;
