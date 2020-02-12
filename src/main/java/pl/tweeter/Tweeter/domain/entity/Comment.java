@@ -22,5 +22,6 @@ public class Comment {
     private Tweet tweet;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime created;
+    @Column(unique = false)
     private String text;
 }
