@@ -1,5 +1,6 @@
 package pl.tweeter.Tweeter.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,7 +16,7 @@ import pl.tweeter.Tweeter.services.impl.UserTwittServiceImpl;
 
 import javax.validation.Valid;
 import java.security.Principal;
-
+@Slf4j
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -23,15 +24,15 @@ public class UserController {
     private final UserTwittServiceImpl userTwittService;
     private final UserRepository userRepository;
     private final TweetRepository tweetRepository;
-    private final MessageRepository messageRepository;
 
 
 
-    public UserController(UserTwittServiceImpl userTwittService, UserRepository userRepository, TweetRepository tweetRepository, MessageRepository messageRepository) {
+
+    public UserController(UserTwittServiceImpl userTwittService, UserRepository userRepository, TweetRepository tweetRepository) {
         this.userTwittService = userTwittService;
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
-        this.messageRepository = messageRepository;
+
 
     }
 
@@ -70,9 +71,17 @@ public class UserController {
     }
 
     @GetMapping("/mymessages")
-    public String getMyMessages(Model model, Long id){
+    public String getMyMessages(Model model, Long id , Principal principal){
+        User user = userRepository.findUserByEmail ( principal.getName () );
+        model.addAttribute ( "messageFind", userTwittService.showMessages ( user.getId () ) );
 
-        model.addAttribute ( "messagefind", messageRepository.findAllByUserId ( id ) );
+        return"user/mymessages";
+
+    }
+
+    @PostMapping("/mymessages")
+    public String postMyMessages(){
+
         return"user/mymessages";
     }
 

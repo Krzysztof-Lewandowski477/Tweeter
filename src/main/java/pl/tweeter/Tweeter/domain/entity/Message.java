@@ -20,7 +20,7 @@ public class Message {
     @ManyToOne
     private User user;
     @ManyToOne
-    @JoinColumn(name = "receiver")
+    @JoinColumn(name = "receiver_id")
     private User receiver;
 
 

@@ -17,6 +17,7 @@ import pl.tweeter.Tweeter.dtos.UserTwittDataDTO;
 import pl.tweeter.Tweeter.services.UserTwittService;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,6 +50,15 @@ public class UserTwittServiceImpl implements UserTwittService {
     }
 
     @Override
+    public List<MessageDataDTO> showMessages(Long id) {
+        ModelMapper modelMapper = new ModelMapper ();
+        List<Message> messages = Collections.singletonList ( (messageRepository.findAllByReceiverId ( id )) );
+        return  messages.stream ()
+                .map ( b->modelMapper.map ( b, MessageDataDTO.class ) )
+                .collect ( Collectors.toList () );
+    }
+
+    @Override
     public void showTwitterDetails(Long id) {
         tweetRepository.findTweetsById ( id );
     }
@@ -72,6 +82,7 @@ public class UserTwittServiceImpl implements UserTwittService {
 
         Message message = modelMapper.map ( messageDataDTO, Message.class );
         message.setStatus ( "nieodebrany" );
+
         message.setUser( userRepository.findUserByEmail ( Utils.getName () ) );
         message.setReceiver ( userRepository.findUserById ( id ) );
         messageRepository.save ( message );

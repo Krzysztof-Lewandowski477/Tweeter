@@ -12,6 +12,7 @@ public interface MessageRepository extends JpaRepository <Message , Long> {
 
 
     Message findAllByUserId(Long id);
+    Message findAllByReceiverId(Long id);
 
     @Modifying
     @Transactional
