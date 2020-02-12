@@ -25,6 +25,10 @@ Tweety:
 <br/>
     ${tweets.id}
     ${tweets.text}
+    <td><b> <a href="${detailsURL}">Komentarze</a></b></td>
+    <c:url value="/twittercomment" var="detailsURL">
+        <c:param name="id" value="${tweets.id}"/>
+    </c:url>
 
 <sec:csrfInput/>
 </c:forEach>
