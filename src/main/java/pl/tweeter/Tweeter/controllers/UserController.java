@@ -28,10 +28,12 @@ public class UserController {
 
 
 
+
     public UserController(UserTwittServiceImpl userTwittService, UserRepository userRepository, TweetRepository tweetRepository) {
         this.userTwittService = userTwittService;
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
+
 
 
     }
@@ -67,11 +69,11 @@ public class UserController {
                 return "redirect:/user/message";
             }
             userTwittService.sendMessage ( messageDataDTO , id );
-        return "user/message";
+        return "redirect:/user/message";
     }
 
     @GetMapping("/mymessages")
-    public String getMyMessages(Model model, Long id , Principal principal){
+    public String getMyMessages(Model model, Principal principal){
         User user = userRepository.findUserByEmail ( principal.getName () );
         model.addAttribute ( "messageFind", userTwittService.showMessages ( user.getId () ) );
 

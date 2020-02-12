@@ -52,7 +52,7 @@ public class UserTwittServiceImpl implements UserTwittService {
     @Override
     public List<MessageDataDTO> showMessages(Long id) {
         ModelMapper modelMapper = new ModelMapper ();
-        List<Message> messages = Collections.singletonList ( (messageRepository.findAllByReceiverId ( id )) );
+        List<Message> messages =   (messageRepository.findAllByReceiverId ( id ));
         return  messages.stream ()
                 .map ( b->modelMapper.map ( b, MessageDataDTO.class ) )
                 .collect ( Collectors.toList () );

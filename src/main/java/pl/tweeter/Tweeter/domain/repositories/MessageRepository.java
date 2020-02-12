@@ -7,12 +7,14 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pl.tweeter.Tweeter.domain.entity.Message;
 
+import java.util.List;
+
 @Repository
 public interface MessageRepository extends JpaRepository <Message , Long> {
 
 
     Message findAllByUserId(Long id);
-    Message findAllByReceiverId(Long id);
+    List<Message> findAllByReceiverId(Long id);
 
     @Modifying
     @Transactional
