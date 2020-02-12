@@ -19,7 +19,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
 
-    public RegistrationServiceImpl(PasswordEncoder passwordEncoder, UserRepository userRepository, RoleRepository roleRepository) {
+    public RegistrationServiceImpl(PasswordEncoder passwordEncoder, UserRepository userRepository, RoleRepository roleRepository ) {
         this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
@@ -33,7 +33,6 @@ public class RegistrationServiceImpl implements RegistrationService {
         user.setActive ( Boolean.TRUE );
         String encodedPassword = passwordEncoder.encode ( registrationDataDTO.getPassword () );
         user.setPassword ( encodedPassword );
-
         Role role = roleRepository.getByName ( "ROLE_USER" );
         user.getRoles ().add ( role );
         userRepository.save ( user );

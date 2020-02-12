@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.tweeter.Tweeter.Utils.Utils;
 import pl.tweeter.Tweeter.domain.entity.Message;
 import pl.tweeter.Tweeter.domain.entity.Tweet;
-import pl.tweeter.Tweeter.domain.entity.User;
 import pl.tweeter.Tweeter.domain.repositories.MessageRepository;
 import pl.tweeter.Tweeter.domain.repositories.TweetRepository;
 import pl.tweeter.Tweeter.domain.repositories.UserRepository;
@@ -30,10 +29,12 @@ public class UserTwittServiceImpl implements UserTwittService {
     private final TweetRepository tweetRepository;
     private final MessageRepository messageRepository;
 
+
     public UserTwittServiceImpl(UserRepository userRepository, TweetRepository tweetRepository, MessageRepository messageRepository) {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
         this.messageRepository = messageRepository;
+
     }
 
     @Override
@@ -66,12 +67,13 @@ public class UserTwittServiceImpl implements UserTwittService {
     }
 
     @Override
-    public void sendMessage(MessageDataDTO messageDataDTO) {
+    public void sendMessage(MessageDataDTO messageDataDTO, Long id) {
         ModelMapper modelMapper = new ModelMapper ();
 
         Message message = modelMapper.map ( messageDataDTO, Message.class );
-
-
+        message.setStatus ( "nieodebrany" );
+        message.setUser( userRepository.findUserByEmail ( Utils.getName () ) );
+        message.setReceiver ( userRepository.findUserById ( id ) );
         messageRepository.save ( message );
 
 

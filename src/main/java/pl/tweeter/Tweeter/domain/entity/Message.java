@@ -16,9 +16,13 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String status;
-    @ManyToMany
-    @JoinColumn(name = "users_messages")
-    private List<User> users = new ArrayList<> (  );
+    private String text;
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    @JoinColumn(name = "receiver")
+    private User receiver;
+
 
 
 }

@@ -34,4 +34,13 @@ public class User {
     private Set<Role> roles = new HashSet<> ( );
     @OneToMany
     private List<Comment> comment= new ArrayList<> (  );
+
+    @OneToMany(mappedBy = "receiver")
+    private List<Message> messagesRecived;
+
+    @OneToMany(mappedBy = "user")
+    private List<Message> messagesSended;
+
+
+
 }

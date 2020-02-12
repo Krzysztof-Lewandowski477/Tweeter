@@ -11,6 +11,8 @@ import pl.tweeter.Tweeter.domain.entity.Message;
 public interface MessageRepository extends JpaRepository <Message , Long> {
 
 
+    Message findAllByUserId(Long id);
+
     @Modifying
     @Transactional
     @Query(value = "UPDATE message SET status ='odebrany' WHERE id = ?1",nativeQuery = true)
