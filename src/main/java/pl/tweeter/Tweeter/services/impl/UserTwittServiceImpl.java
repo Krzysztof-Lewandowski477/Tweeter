@@ -6,10 +6,14 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.tweeter.Tweeter.Utils.Utils;
+import pl.tweeter.Tweeter.domain.entity.Message;
 import pl.tweeter.Tweeter.domain.entity.Tweet;
+import pl.tweeter.Tweeter.domain.entity.User;
+import pl.tweeter.Tweeter.domain.repositories.MessageRepository;
 import pl.tweeter.Tweeter.domain.repositories.TweetRepository;
 import pl.tweeter.Tweeter.domain.repositories.UserRepository;
 
+import pl.tweeter.Tweeter.dtos.MessageDataDTO;
 import pl.tweeter.Tweeter.dtos.UserTwittDataDTO;
 import pl.tweeter.Tweeter.services.UserTwittService;
 
@@ -24,10 +28,12 @@ public class UserTwittServiceImpl implements UserTwittService {
 
     private final UserRepository userRepository;
     private final TweetRepository tweetRepository;
+    private final MessageRepository messageRepository;
 
-    public UserTwittServiceImpl(UserRepository userRepository, TweetRepository tweetRepository) {
+    public UserTwittServiceImpl(UserRepository userRepository, TweetRepository tweetRepository, MessageRepository messageRepository) {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
+        this.messageRepository = messageRepository;
     }
 
     @Override
@@ -56,6 +62,18 @@ public class UserTwittServiceImpl implements UserTwittService {
         tweet.setUser ( userRepository.findUserByEmail ( Utils.getName() ) );
 
         tweetRepository.save ( tweet );
+
+    }
+
+    @Override
+    public void sendMessage(MessageDataDTO messageDataDTO) {
+        ModelMapper modelMapper = new ModelMapper ();
+
+        Message message = modelMapper.map ( messageDataDTO, Message.class );
+
+
+        messageRepository.save ( message );
+
 
     }
 }

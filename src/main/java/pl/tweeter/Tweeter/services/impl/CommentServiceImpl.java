@@ -5,8 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import pl.tweeter.Tweeter.Utils.Utils;
 import pl.tweeter.Tweeter.domain.entity.Comment;
-import pl.tweeter.Tweeter.domain.entity.Tweet;
-import pl.tweeter.Tweeter.domain.entity.User;
 import pl.tweeter.Tweeter.domain.repositories.CommentRepository;
 import pl.tweeter.Tweeter.domain.repositories.TweetRepository;
 import pl.tweeter.Tweeter.domain.repositories.UserRepository;
