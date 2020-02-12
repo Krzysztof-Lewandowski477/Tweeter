@@ -42,7 +42,7 @@ public class CommentController {
         }
         commentService.addComment ( commentDataDTO, id);
 
-        return "redirect:/twittercomment";
+        return "redirect:/index";
     }
 
 }
