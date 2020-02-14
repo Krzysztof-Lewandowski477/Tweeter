@@ -33,7 +33,7 @@
 
                 </div>
             Wszystkie twoje tweety
-<for:forEach items="${allTwitt}" var="allTwitt">
+<for:forEach items="${allTwitt}" var="allTwitt" step="1">
     ${allTwitt.text}
     <td><b> <a href="${detailsURL}">Szczegóły</a></b></td>
     <c:url value="/user/twitterdetails" var="detailsURL">

@@ -32,8 +32,8 @@
 
             <tr>
 
-                <td>${tweet.text}</td>
-                <td>${tweet.id}</td>
+                <td></td>
+                <td></td>
                 <td>
                     <button  class="default-button" onclick="window.location.href ='${deleteURL}';">Usuń</button>
                 </td>
@@ -47,6 +47,8 @@
             </tr>
             <c:forEach items="${messageFind}" var="find">
                 ${find.text}
+                ${find.receiver.firstName}
+
             </c:forEach>
             <tr>
                 <td></td>
