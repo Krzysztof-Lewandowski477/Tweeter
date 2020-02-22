@@ -7,7 +7,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import pl.tweeter.Tweeter.domain.entity.User;
-import pl.tweeter.Tweeter.domain.repositories.MessageRepository;
 import pl.tweeter.Tweeter.domain.repositories.TweetRepository;
 import pl.tweeter.Tweeter.domain.repositories.UserRepository;
 import pl.tweeter.Tweeter.dtos.MessageDataDTO;
@@ -42,7 +41,7 @@ public class UserController {
     public String preapreUserPage(Principal principal, Model model, Long id){
     User user = userRepository.findUserByEmail ( principal.getName () );
     model.addAttribute ( "allTwitt", userTwittService.showTwitt ( user.getId () ));
-    model.addAttribute ( "tweet" , tweetRepository.findTweetsById (  id));
+    model.addAttribute ( "tweet" , tweetRepository.findTweetsById (id));
 
         return "user/account";
 }
