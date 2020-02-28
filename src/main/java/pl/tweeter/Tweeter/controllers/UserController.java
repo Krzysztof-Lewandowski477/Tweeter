@@ -67,7 +67,7 @@ public class UserController {
             if (result.hasErrors ()){
                 return "redirect:/user/message";
             }
-            userTwittService.sendMessage ( messageDataDTO , id );
+            userTwittService.sendMessage ( messageDataDTO        );
         return "redirect:/user/message";
     }
 

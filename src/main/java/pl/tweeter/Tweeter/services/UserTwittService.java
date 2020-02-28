@@ -12,7 +12,7 @@ public interface UserTwittService {
     List<MessageDataDTO> showMessages(Long id);
     void showTwitterDetails(Long id);
     void addTweet(UserTwittDataDTO userTwittDataDTO, Long id);
-    void sendMessage(MessageDataDTO messageDataDTO, Long id);
+    void sendMessage(MessageDataDTO messageDataDTO);
 
 
 }

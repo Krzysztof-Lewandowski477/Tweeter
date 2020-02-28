@@ -77,14 +77,13 @@ public class UserTwittServiceImpl implements UserTwittService {
     }
 
     @Override
-    public void sendMessage(MessageDataDTO messageDataDTO, Long id) {
+    public void sendMessage(MessageDataDTO messageDataDTO) {
         ModelMapper modelMapper = new ModelMapper ();
 
         Message message = modelMapper.map ( messageDataDTO, Message.class );
         message.setStatus ( "nieodebrany" );
 
         message.setUser( userRepository.findUserByEmail ( Utils.getName () ) );
-        message.setReceiver ( userRepository.findUserById ( id ) );
         messageRepository.save ( message );
 
 
