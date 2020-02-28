@@ -11,9 +11,9 @@
 
 <form:form modelAttribute="message">
     Wiadomosc<form:input path="text"/>
-    <form:hidden path="user"/>
-    <form:hidden path="receiver.id" />
-<%--    <form:hidden path="id"/>--%>
+<%--    <form:hidden path="user.id"/>--%>
+<%--    <form:hidden path="receiver.id" />--%>
+    <form:hidden path="id"/>
 
 <button type="submit">Wyślij</button>
 
