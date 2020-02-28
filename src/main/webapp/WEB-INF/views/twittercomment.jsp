@@ -47,8 +47,8 @@
 
                 <td align="center"> Operacje</td>
                 </tr>
-                <for:forEach items="${comments}" var="comments" begin="0">
-            <tr>
+                <for:forEach items="${comments}" var="comments" >
+            <tr><br/>
                 <td>${comments.text}</td>
                     <td>${comments.user.firstName}</td>
                     <td><b> <a href="${detailsURL}" type="Submit">Napisz do komentującego</a></b></td>
@@ -58,15 +58,14 @@
 
             <tr>
                 </for:forEach>
-
-
+            </table>
+                    <table border="1" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
             <tr>
                 <form:form  method="post" modelAttribute="comment" >
                 Komentarz:<form:input path="text"/>
                     <form:hidden path="user.id"/>
-                    <form:hidden path="tweet.id"/>
                     <form:hidden path="twitterId" value="${tweet.id}"/>
-                    <button type="submit" title="Submit">Dodaj komentarz</button>
+                    <button type="submit" value="Dodaj">Dodaj komentarz</button>
                 </form:form>
 
 
