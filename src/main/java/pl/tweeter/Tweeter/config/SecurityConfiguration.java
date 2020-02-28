@@ -47,7 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring ().antMatchers (  "/image/**" ,"/resources/**","/commons/**").antMatchers ( "/webjars/**" );
+        web.ignoring ().antMatchers (  "/image/**" ,"/resources/**","/commons/**","js/**").antMatchers ( "/webjars/**" );
 
     }
 
